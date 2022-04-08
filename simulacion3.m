@@ -31,6 +31,7 @@ for i=1:1:length(x)
     q=fsolve(@c_inv,q0);
     q1(c)=q(1); q2(c)=q(2); q3(c)=q(3);
     q4(c)=q(4); q5(c)=q(5); q6(c)=q(6);
+    
     robot(q(1),q(2),q(3),q(4),q(5),q(6));
     hold on
     plot3(x,y,z,'r','LineWidth',2)
@@ -39,4 +40,17 @@ for i=1:1:length(x)
     q0=q;
     c=c+1;
 end
+
+figure(2)
+plot(time,rad2deg(q1),'r')
+hold on
+plot(time,rad2deg(q2),'g')
+plot(time,rad2deg(q3),'b')
+plot(time,rad2deg(q4),'r*')
+plot(time,rad2deg(q5),'g*')
+plot(time,rad2deg(q1),'b*')
+xlabel('Eje X')
+ylabel('Eje Y')
+legend('q1','q2','q3','q4','q5','q6')
+grid on
     
