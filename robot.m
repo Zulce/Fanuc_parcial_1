@@ -28,12 +28,12 @@ z=[0 S01(3,4) S02(3,4) S03(3,4) S04(3,4) S05(3,4) S06(3,4) S07(3,4)];
 plot3(x,y,z,'LineWidth',3)
 hold on 
 frame(eye(4),'r',0.2);
-% frame(S01,'g',0.2);
-% frame(S02,'b',0.2);
-% frame(S03,'r',0.2);
-% frame(S04,'g',0.2);
-% frame(S05,'b',0.2);
-% frame(S06,'r',0.2);
+frame(S01,'g',0.2);
+frame(S02,'b',0.2);
+frame(S03,'r',0.2);
+frame(S04,'g',0.2);
+frame(S05,'b',0.2);
+frame(S06,'r',0.2);
 frame(S07,'c',0.2);
 grid on 
 n=1.7;
