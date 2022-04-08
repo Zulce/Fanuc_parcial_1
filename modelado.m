@@ -10,7 +10,7 @@ S23=DHC(0,l3,q3,0);
 S34=DHC(pi/2,0,q4,l4);  
 S45=DHC(-pi/2,0,q5,0);
 S56=DHC(pi/2,0,q6,0);
-S67=DHC(0,0,0,l5);
+S67=roty(-pi/2)*rotx(pi)*transl(l5,0,0);
 
 %Vectores de posición
 S02=S01*S12;
