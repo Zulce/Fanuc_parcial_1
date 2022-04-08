@@ -1,4 +1,4 @@
-function r=robot(q1,q2,q3,q4,q5,q6)
+function []=robot(q1,q2,q3,q4,q5,q6)
 global l1 l2 l3 l4 l5
 parametros
 %Vectores relativos representafos por MH)
@@ -19,7 +19,7 @@ S04=S01*S12*S23*S34;
 S05=S01*S12*S23*S34*S45;
 S06=S01*S12*S23*S34*S45*S56;
 S07=S01*S12*S23*S34*S45*S56*S67;
-r=S07;
+%r=S07;
 
 %Vector con puntos que apuntan al origen de cada sistema
 x=[0 S01(1,4) S02(1,4) S03(1,4) S04(1,4) S05(1,4) S06(1,4) S07(1,4)];
@@ -38,6 +38,6 @@ frame(S07,'c',0.2);
 grid on 
 n=1.7;
 axis([-n n -n n -n n])
-campos([n n n])
+campos([n -n n])
 
 end 

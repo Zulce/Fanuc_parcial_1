@@ -1,0 +1,27 @@
+%Simulación 3: Movimiento en trayectoria quíntica
+clc; close all; clear all;
+parametros
+
+global xe ye ze alpha betha gamma
+tf=10;
+c=1;
+
+q0=[0,0,0,0,0,0];
+
+%Posicion inicial y final
+pi=[0.15;0.15;0.4];
+pf=[0.25;0.25;0.5];
+for t=0:1/10:tf
+   time(c)=t;
+   Rt=pi+(10*(t/tf)^3-15*(t/tf)^4+6*(t/tf)^5)*(pf-pi);
+   x(c)=Rt(1);
+   y(c)=Rt(2);
+   z(c)=Rt(3);
+   clf
+   q=fsolve(@c_inv,q0);
+   q1(c)=q(1); q2(c)=q(2); q3(c)=q(3);
+   q4(c)=q(4); q5(c)=q(5); q6(c)=q(6);
+   
+   c=c+1;
+end
+    

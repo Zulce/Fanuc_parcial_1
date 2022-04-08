@@ -4,10 +4,7 @@ parametros
 
 global xe ye ze alfa betha gamma
 
-% xe=0.924;ye=-0.172;ze=0.950;
-% alfa=pi/2;betha=pi;gamma=pi/2;
-
-xe=1.185;ye=0;ze=0.550;
+xe=0.8;ye=0;ze=1;
 alfa=0;betha=-pi/2;gamma=-pi;
 
 %q0=[pi,0,pi/2,pi,pi,0]
