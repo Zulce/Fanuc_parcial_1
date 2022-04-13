@@ -111,7 +111,7 @@ J77 =[diff(v77(1),q1p) diff(v77(1),q2p) diff(v77(1),q3p) diff(v77(1),q4p) diff(v
       diff(w77(2),q1p) diff(w77(2),q2p) diff(w77(2),q3p) diff(w77(2),q4p) diff(w77(2),q5p) diff(w77(2),q6p);...
       diff(w77(3),q1p) diff(w77(3),q2p) diff(w77(3),q3p) diff(w77(3),q4p) diff(w77(3),q5p) diff(w77(3),q6p)
       ];
-FcolumnFcol=J77(1:6,1);
+
 %VELOCIDAD DIRECTA
 qp=[q1p;q2p;q3p;q4p;q5p;q6p];
 xe77p=J77*qp;
