@@ -145,18 +145,21 @@ c=1;
 for i=1:1:length(x)
     xe=x(i); ye=y(i); ze=z(i); 
     alfa=a1(i); betha=a2(i); gamma=a3(i);
-    
+    %%Calculo de la posicón articular
     clf
     q=fsolve(@c_inv,q0);
     q1(c)=q(1); q2(c)=q(2); q3(c)=q(3);
     q4(c)=q(4); q5(c)=q(5); q6(c)=q(6);
     
     DET(c)=(l3*l4*cos(q(3))*sin(q(5))*(cos(pi) - 1)^2*(2*l2 + l4*cos(q(2) + q(3)) + 2*l3*cos(pi/2 + q(2)) - l4*cos(pi + q(2) + q(3))))/8;
-
+    
+    %%Caculo de la velocidad articular
+    xp=[xv(i);yv(i);zv(i)];
+    qp=inv(J77)*xp;
+    %%Grficación de movimiento del robot
     robot(q(1),q(2),q(3),q(4),q(5),q(6));
     hold on
     plot3(x,y,z,'r','LineWidth',2)
-  %  campos([0.1 0.1 0.1])
     pause(0.001)
     q0=q;
     c=c+1;
