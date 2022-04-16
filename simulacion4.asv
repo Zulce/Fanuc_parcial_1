@@ -7,8 +7,8 @@ tf=10; % tiempo final de la trayetoria
 c=1;
 %Posicion inicial y final del vector sobre el cual se desplazará el efector
 %final
-Pi=[0.7;0.7;0.6];
-pf=[1;1;1];
+Pi=[0.7;0.7;0.7];
+pf=[1.2;0;];
 
 %Orientaciones iniciales y finales
 ai=[deg2rad(-5);deg2rad(0);deg2rad(5)];
