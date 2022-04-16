@@ -38,8 +38,16 @@ Q2u=unique(Q2);
 Q3u=unique(Q3);
 Q5u=unique(Q5);
 
-for l=1:10:length(Q2u)
+f=figure(1)
+for i=1:1:length(Q2u)
     clf
-    robot(0,Q2u(l),Q3u(l),0,0,0)
+    robot(0,Q2u(i),Q3u(i),0,0,0)
     pause(0.001)
+    F(i)=getframe(f);
 end
+
+vidObj=VideoWriter('singularidades_2','MPEG-4');
+vidObj.FrameRate=10;
+open(vidObj)
+writeVideo(vidObj,F)
+close(vidObj)
