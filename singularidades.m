@@ -20,6 +20,7 @@ for i=0:inc:360
                 for m=0:inc:360
                     for n=0:inc:360
                         
+                        
                         q1=deg2rad(i); q2=deg2rad(j);
                         q3=deg2rad(k); q4=deg2rad(l);
                         q5=deg2rad(m); q6=deg2rad(n);
