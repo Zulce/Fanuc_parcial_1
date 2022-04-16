@@ -40,6 +40,6 @@ Q5u=unique(Q5);
 
 for l=1:10:length(Q2u)
     clf
-    robot(0,Q2u(l),Q3u(l),0,Q5u(l),0)
+    robot(0,Q2u(l),Q3u(l),0,0,0)
     pause(0.001)
 end
