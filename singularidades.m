@@ -11,41 +11,35 @@ parametros
     %q3 = (n*pi)/2; donde n=0,1,2,3,4...
     %q5= = n*pi; donde n=0,1,2,3,4...
 tic
-inc=20;
+inc=1;
 c=1;
 for i=0:inc:360
     for j=0:inc:360
         for k=0:inc:360
-            for l=0:inc:360
-                for m=0:inc:360
-                    for n=0:inc:360
                         
-                        
-                        q1=deg2rad(i); q2=deg2rad(j);
-                        q3=deg2rad(k); q4=deg2rad(l);
-                        q5=deg2rad(m); q6=deg2rad(n);
+                        q2=deg2rad(i); q3=deg2rad(j);q5=deg2rad(k); 
                         
                         DET(c)=(l3*l4*cos(q3)*sin(q5)*(cos(pi) - 1)^2*(2*l2 + l4*cos(q2 + q3) + 2*l3*cos(pi/2 + q2) - l4*cos(pi + q2 + q3)))/8;
                         
                         if DET(c)==0
-                            Q1(c)=q1;
+                            
                             Q2(c)=q2;
                             Q3(c)=q3;
-                            Q4(c)=q4;
                             Q5(c)=q5;
-                            Q6(c)=q6;
+                            
+                            c=c+1;
                         end
-                        c=c+1;
-                    end
-                end
-            end
         end
     end
 end 
 toc
 
-for i=1:1000:length(Q1)
+Q2u=unique(Q2);
+Q3u=unique(Q3);
+Q5u=unique(Q5);
+
+for l=1:10:length(Q2u)
     clf
-    robot(Q1(i),Q2(i),Q3(i),Q4(i),Q5(i),Q6(i))
+    robot(0,Q2u(l),Q3u(l),0,Q5u(l),0)
     pause(0.001)
 end
