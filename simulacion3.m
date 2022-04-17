@@ -14,7 +14,7 @@ for t=0:1/10:tf
    time(c)=t;
    %Expresión que representa el cambio de posción en función del tiempo y
    %los puntos final e inicial
-   Rt=pi+(10*(t/tf)^3-15*(t/tf)^4+6*(t/tf)^5)*(pf-pi)
+   Rt=Pi+(10*(t/tf)^3-15*(t/tf)^4+6*(t/tf)^5)*(pf-Pi)
    x(c)=Rt(1);
    y(c)=Rt(2);
    z(c)=Rt(3);
@@ -25,6 +25,7 @@ end
 q0=[0,0,0,0,0,0];
 c=1;
 %Graficación del robot y su trayectoria quíntica
+f=figure(1)
 for i=1:1:length(x)
     xe=x(i);ye=y(i); ze=z(i); 
     clf
@@ -39,9 +40,17 @@ for i=1:1:length(x)
     pause(0.001)
     q0=q;
     c=c+1;
+    F(i)=getframe(f);
 end
 
+vidObj=VideoWriter('trayectoria_c_inv','MPEG-4');
+vidObj.FrameRate=10;
+open(vidObj)
+writeVideo(vidObj,F)
+close(vidObj)
+
 figure(2)
+title("Posición de las juntas")
 plot(time,rad2deg(q1),'r')
 hold on
 plot(time,rad2deg(q2),'g')
