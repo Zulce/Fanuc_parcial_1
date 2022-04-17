@@ -7,8 +7,8 @@ tf=10;
 c=1;
 %Posicion inicial y final del vector sobre el cual se desplazará el efector
 %final
-pi=[0.6;0.6;0.6];
-pf=[1;0.9;0.9];
+Pi=[0.7;0.7;0.6];
+pf=[1;1;1];
 
 for t=0:1/10:tf
    time(c)=t;

@@ -46,7 +46,7 @@ for i=1:1:length(Q2u)
     F(i)=getframe(f);
 end
 
-vidObj=VideoWriter('singularidades_2','MPEG-4');
+vidObj=VideoWriter('Singularidades','MPEG-4');
 vidObj.FrameRate=10;
 open(vidObj)
 writeVideo(vidObj,F)
