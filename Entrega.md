@@ -47,19 +47,67 @@ l1 - ze + l4*cos(pi/2)^2 + l3*sin(pi/2 + q2)*sin(pi/2) + l5*sin(pi/2)*(cos(pi/2)
 xe=0.8;ye=0;ze=1;
 alfa=0;betha=-pi/2;gamma=-pi;
 ```
-Insertar imágen
+<img src="/imagenes/Comp_Cinv.png" width="460" height="320">
 
 ### Trayectoria propuesta
+[![N|Solid](https://media.giphy.com/media/q5C2tMmeYZ2VWuW3Vj/giphy.gif)]
 
-Faltan imagenes
 
 ## 5. Posición de juntas
+<img src="/imagenes/Pos_articulaciones_c_inv.png" width="460" height="320">
 
+## 6. Jacobiano por el método de propagación de velocidades
 
-## 6. Jacobiano
+```sh
+J77 =[diff(v77(1),q1p) diff(v77(1),q2p) diff(v77(1),q3p) diff(v77(1),q4p) diff(v77(1),q5p) diff(v77(1),q6p);...
+      diff(v77(2),q1p) diff(v77(2),q2p) diff(v77(2),q3p) diff(v77(2),q4p) diff(v77(2),q5p) diff(v77(2),q6p);...
+      diff(v77(3),q1p) diff(v77(3),q2p) diff(v77(3),q3p) diff(v77(3),q4p) diff(v77(3),q5p) diff(v77(3),q6p);...
+      diff(w77(1),q1p) diff(w77(1),q2p) diff(w77(1),q3p) diff(w77(1),q4p) diff(w77(1),q5p) diff(w77(1),q6p);...
+      diff(w77(2),q1p) diff(w77(2),q2p) diff(w77(2),q3p) diff(w77(2),q4p) diff(w77(2),q5p) diff(w77(2),q6p);...
+      diff(w77(3),q1p) diff(w77(3),q2p) diff(w77(3),q3p) diff(w77(3),q4p) diff(w77(3),q5p) diff(w77(3),q6p)
+      ];
+      
+J77 =
+ 
+[                                                                                                                                                                                                                                                                                                                                                               -sin(q4)*sin(q5)*((11*cos(q2 + pi/2))/20 + (67*cos(q3)*sin(q2 + pi/2))/100 + (67*cos(q2 + pi/2)*sin(q3))/100 + 3/10),                                                                                                                      cos(q4)*sin(q5)*((11*sin(q3))/20 + 67/100) - (11*cos(q3)*cos(q5))/20,                                                                                                  (67*cos(q4)*sin(q5))/100,                         0,                0, 0]
+[  (43*cos(q6)*(sin(q5)*(cos(q3)*cos(q2 + pi/2) - sin(q3)*sin(q2 + pi/2)) + cos(q4)*cos(q5)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3))))/200 - (43*sin(q4)*sin(q6)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3)))/200 + cos(q4)*cos(q6)*((11*cos(q2 + pi/2))/20 + (67*cos(q3)*sin(q2 + pi/2))/100 + (67*cos(q2 + pi/2)*sin(q3))/100 + 3/10) - cos(q5)*sin(q4)*sin(q6)*((11*cos(q2 + pi/2))/20 + (67*cos(q3)*sin(q2 + pi/2))/100 + (67*cos(q2 + pi/2)*sin(q3))/100 + 3/10), (43*cos(q4)*sin(q6))/200 + sin(q6)*((11*cos(q3)*sin(q5))/20 + cos(q4)*cos(q5)*((11*sin(q3))/20 + 67/100)) + cos(q6)*sin(q4)*((11*sin(q3))/20 + 67/100) + (43*cos(q5)*cos(q6)*sin(q4))/200, (43*cos(q4)*sin(q6))/200 + (67*cos(q6)*sin(q4))/100 + (67*cos(q4)*cos(q5)*sin(q6))/100 + (43*cos(q5)*cos(q6)*sin(q4))/200, -(43*cos(q6)*sin(q5))/200, (43*sin(q6))/200, 0]
+[- (43*sin(q6)*(sin(q5)*(cos(q3)*cos(q2 + pi/2) - sin(q3)*sin(q2 + pi/2)) + cos(q4)*cos(q5)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3))))/200 - cos(q4)*sin(q6)*((11*cos(q2 + pi/2))/20 + (67*cos(q3)*sin(q2 + pi/2))/100 + (67*cos(q2 + pi/2)*sin(q3))/100 + 3/10) - (43*cos(q6)*sin(q4)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3)))/200 - cos(q5)*cos(q6)*sin(q4)*((11*cos(q2 + pi/2))/20 + (67*cos(q3)*sin(q2 + pi/2))/100 + (67*cos(q2 + pi/2)*sin(q3))/100 + 3/10), (43*cos(q4)*cos(q6))/200 + cos(q6)*((11*cos(q3)*sin(q5))/20 + cos(q4)*cos(q5)*((11*sin(q3))/20 + 67/100)) - sin(q4)*sin(q6)*((11*sin(q3))/20 + 67/100) - (43*cos(q5)*sin(q4)*sin(q6))/200, (43*cos(q4)*cos(q6))/200 - (67*sin(q4)*sin(q6))/100 + (67*cos(q4)*cos(q5)*cos(q6))/100 - (43*cos(q5)*sin(q4)*sin(q6))/200,  (43*sin(q5)*sin(q6))/200, (43*cos(q6))/200, 0]
+[                                                                                                                                                                                                                                                                                                                                                      cos(q4)*sin(q5)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3)) - cos(q5)*(cos(q3)*cos(q2 + pi/2) - sin(q3)*sin(q2 + pi/2)),                                                                                                                                                                           sin(q4)*sin(q5),                                                                                                           sin(q4)*sin(q5),                   cos(q5),                0, 1]
+[                                                                                                                                                                                                                                                                        sin(q6)*(sin(q5)*(cos(q3)*cos(q2 + pi/2) - sin(q3)*sin(q2 + pi/2)) + cos(q4)*cos(q5)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3))) + cos(q6)*sin(q4)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3)),                                                                                                                                                 cos(q5)*sin(q4)*sin(q6) - cos(q4)*cos(q6),                                                                                 cos(q5)*sin(q4)*sin(q6) - cos(q4)*cos(q6),          -sin(q5)*sin(q6),         -cos(q6), 0]
+[                                                                                                                                                                                                                                                                        cos(q6)*(sin(q5)*(cos(q3)*cos(q2 + pi/2) - sin(q3)*sin(q2 + pi/2)) + cos(q4)*cos(q5)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3))) - sin(q4)*sin(q6)*(cos(q3)*sin(q2 + pi/2) + cos(q2 + pi/2)*sin(q3)),                                                                                                                                                 cos(q4)*sin(q6) + cos(q5)*cos(q6)*sin(q4),                                                                                 cos(q4)*sin(q6) + cos(q5)*cos(q6)*sin(q4),          -cos(q6)*sin(q5),          sin(q6), 0]
+ 
+```
 
-## 7. Singularidades
-[![N|Solid](https://raw.githubusercontent.com/Zulce/Fanuc_parcial_1/main/singularidades_2.mp4)]
+### Comrpobación del jacobiano mediante su rango
+```sh
+rank(J77)
+
+ans =
+
+     6
+```
+
+## 7. Determinante y singularidades
+<img src="/imagenes/DET.png" width="460" height="320">
 
 ## 8. Trayectoria de perfil quíntico
+
+### Posición espacio cartesiano
+<img src="/imagenes/pos_EC.png" width="460" height="320">
+
+### Velocidad espacio cartesiano
+<img src="/imagenes/Velo_EC.png" width="460" height="320">
+
+### Aceleración espacio cartesiano
+<img src="/imagenes/acel_EC.png" width="460" height="320">
+
+### Posición espacio articular
+<img src="/imagenes/pos_EA.png" width="460" height="320">
+
+### Velocidad espacio articular
+<img src="/imagenes/Velo_EApng.png" width="460" height="320">
+
+### Aceleración espacio articular
+<img src="/imagenes/acel_EA.png" width="460" height="320">
+
 
