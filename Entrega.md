@@ -5,5 +5,5 @@
 
 ## 2. Parámetros Denavit-Hartenberg
 
-
+<img src="/imagenes/photo_2022-04-16_23-17-30.jpg"  width="700" height="500" > 
 
