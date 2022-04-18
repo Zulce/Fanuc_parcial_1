@@ -6,10 +6,7 @@ parametros
 %                                        \                                \  2      /                          /
 % - ------------------------------------------------------------------------------------------------------------
 %                                                         8
-%% Dado que q2, q3 y q5 son las articulaciones dominantes en la ocurrencia de
-%singularidades para los siguiente valores:
-    %q3 = (n*pi)/2; donde n=0,1,2,3,4...
-    %q5= = n*pi; donde n=0,1,2,3,4...
+
 tic
 inc=1;
 c=1;
