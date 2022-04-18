@@ -6,10 +6,7 @@ parametros
 %                                        \                                \  2      /                          /
 % - ------------------------------------------------------------------------------------------------------------
 %                                                         8
-%% Dado que q2, q3 y q5 son las articulaciones dominantes en la ocurrencia de
-%singularidades para los siguiente valores:
-    %q3 = (n*pi)/2; donde n=0,1,2,3,4...
-    %q5= = n*pi; donde n=0,1,2,3,4...
+
 tic
 inc=1;
 c=1;
@@ -43,11 +40,12 @@ for i=1:1:length(Q2u)
     clf
     robot(0,Q2u(i),Q3u(i),0,pi,0)
     pause(0.001)
-%     F(i)=getframe(f);
+    F(i)=getframe(f);
 end
 
-% vidObj=VideoWriter('Singularidades','MPEG-4');
-% vidObj.FrameRate=10;
-% open(vidObj)
-% writeVideo(vidObj,F)
-% close(vidObj)
+
+vidObj=VideoWriter('Singularidades','MPEG-4');
+vidObj.FrameRate=10;
+open(vidObj)
+writeVideo(vidObj,F)
+close(vidObj)
