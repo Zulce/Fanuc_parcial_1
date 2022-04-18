@@ -38,5 +38,5 @@ frame(S07,'c',0.2);
 grid on 
 n=1.7;
 axis([-n n -n n -n n])
-campos([n -n n])
+campos([n n n])
 end 

@@ -15,7 +15,7 @@ inc=1;
 c=1;
 for i=0:inc:360
     for j=0:inc:360
-        for k=0:inc:360
+         for k=0:inc:360
                         
                         q2=deg2rad(i); q3=deg2rad(j);q5=deg2rad(k); 
                         
@@ -29,7 +29,7 @@ for i=0:inc:360
                             
                             c=c+1;
                         end
-        end
+         end
     end
 end 
 toc
@@ -41,13 +41,13 @@ Q5u=unique(Q5);
 f=figure(1)
 for i=1:1:length(Q2u)
     clf
-    robot(0,Q2u(i),Q3u(i),0,0,0)
+    robot(0,Q2u(i),Q3u(i),0,pi,0)
     pause(0.001)
-    F(i)=getframe(f);
+%     F(i)=getframe(f);
 end
 
-vidObj=VideoWriter('Singularidades','MPEG-4');
-vidObj.FrameRate=10;
-open(vidObj)
-writeVideo(vidObj,F)
-close(vidObj)
+% vidObj=VideoWriter('Singularidades','MPEG-4');
+% vidObj.FrameRate=10;
+% open(vidObj)
+% writeVideo(vidObj,F)
+% close(vidObj)
