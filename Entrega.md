@@ -51,13 +51,24 @@ alfa=0;betha=-pi/2;gamma=-pi;
 <img src="/imagenes/Comp_Cinv.png" width="460" height="320">
 
 ### Trayectoria propuesta
-[![N|Solid](https://media.giphy.com/media/q5C2tMmeYZ2VWuW3Vj/giphy.gif)]
+```sh
+%Posicion inicial y final del vector sobre el cual se desplazará el efector
+%final
+Pi=[0.7;0.7;0.6];
+pf=[1;1;1];
+
+%Orientaciones iniciales y finales
+ai=[deg2rad(-5);deg2rad(0);deg2rad(5)];
+af=[deg2rad(5);deg2rad(10);deg2rad(-5)];
+```
+[![N|Solid](https://media.giphy.com/media/q5C2tMmeYZ2VWuW3Vj/giphy.gif)](https://github.com/Zulce/Fanuc_parcial_1/blob/8a98261e02272b3ce39ca4ed61c06640ebc73084/simulacion4.m)
+
 
 
 ## 5. Posición de juntas
 <img src="/imagenes/pos_EC.png" width="460" height="320">
 
-## 6. Jacobiano por el método de propagación de velocidades
+## 6. Jacobiano por el método de propagación de velocidades [(J77inv.m)](https://github.com/Zulce/Fanuc_parcial_1/blob/8a98261e02272b3ce39ca4ed61c06640ebc73084/J77inv.m)
 
 ```sh
 J77 =[diff(v77(1),q1p) diff(v77(1),q2p) diff(v77(1),q3p) diff(v77(1),q4p) diff(v77(1),q5p) diff(v77(1),q6p);...
